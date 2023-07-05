@@ -1,4 +1,4 @@
-package com.example.delitesprm392project;
+package com.example.delitesprm392project.model;
 
 public class User {
     public String name, email, phone, password, role;
