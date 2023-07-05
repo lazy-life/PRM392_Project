@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "4061717727",
+    "project_id": "delites-prm392-project",
+    "storage_bucket": "delites-prm392-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4061717727:android:e2a4a007ae859b69b4f56a",
+        "android_client_info": {
+          "package_name": "com.example.delitesprm392project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "4061717727-fq9qd98ca0oonfulnterhrop2nb1huof.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLVsj-iH-yjCBeNJKvYsVOWYqdF8Woeyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "4061717727-fq9qd98ca0oonfulnterhrop2nb1huof.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
