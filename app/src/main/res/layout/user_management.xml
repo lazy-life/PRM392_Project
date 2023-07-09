@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".UserManagement">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/avatar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Name Back"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign in to continue"
+        android:textAlignment="center"
+        android:textColor="#64718a"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/search">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_border_btn_white">
+                <TextView
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp"
+                    android:text="Account Informations"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:clickable="true"
+                    android:textColor="@color/default_color_bind"
+                    android:layout_marginLeft="100dp"
+                    android:textSize="30dp"
+                    android:text=">"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_border_btn_white">
+                <TextView
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp"
+                    android:text="My Orders"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:clickable="true"
+                    android:textColor="@color/default_color_bind"
+                    android:layout_marginLeft="100dp"
+                    android:textSize="30dp"
+                    android:text=">"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_border_btn_white">
+                <TextView
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp"
+                    android:text="Payment Method"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:clickable="true"
+                    android:textColor="@color/default_color_bind"
+                    android:layout_marginLeft="100dp"
+                    android:textSize="30dp"
+                    android:text=">"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_border_btn_white">
+                <TextView
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp"
+                    android:text="Delivery Address"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:clickable="true"
+                    android:textColor="@color/default_color_bind"
+                    android:layout_marginLeft="100dp"
+                    android:textSize="30dp"
+                    android:text=">"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_border_btn_white">
+                <TextView
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp"
+                    android:text="Setting"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:clickable="true"
+                    android:textColor="@color/default_color_bind"
+                    android:layout_marginLeft="100dp"
+                    android:textSize="30dp"
+                    android:text=">"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/shape_border_btn_white">
+                <TextView
+                    android:clickable="true"
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp"
+                    android:text="Logout"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"/>
+                 </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

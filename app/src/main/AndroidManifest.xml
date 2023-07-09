@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/icon"
-        android:logo="@drawable/icon"
         android:label="@string/app_name"
+        android:logo="@drawable/icon"
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.DelitesPRM392Project"
         tools:targetApi="31">
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".UserManagement"
+            android:exported="false" />
         <activity
             android:name=".Home"
             android:exported="false" />
@@ -21,7 +29,7 @@
             android:name=".Signup"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".UserProfile"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,8 +39,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
