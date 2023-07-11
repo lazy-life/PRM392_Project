@@ -49,135 +49,148 @@
 
             <LinearLayout
                 android:id="@+id/profile_btn"
-                android:gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:layout_marginBottom="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@drawable/shape_border_btn_white">
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/shape_border_btn_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp">
+
                 <TextView
-                    android:textColor="@color/default_color"
-                    android:textSize="20dp"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
                     android:text="Account Informations"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:clickable="true"
-                    android:textColor="@color/default_color_bind"
-                    android:layout_marginLeft="100dp"
-                    android:textSize="30dp"
-                    android:text=">"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-            <LinearLayout
-                android:gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:layout_marginBottom="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/shape_border_btn_white">
-                <TextView
                     android:textColor="@color/default_color"
-                    android:textSize="20dp"
-                    android:text="My Orders"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"/>
+                    android:textSize="20dp" />
+
                 <TextView
-                    android:clickable="true"
-                    android:textColor="@color/default_color_bind"
-                    android:layout_marginLeft="100dp"
-                    android:textSize="30dp"
-                    android:text=">"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:clickable="true"
+                    android:text=">"
+                    android:textColor="@color/default_color_bind"
+                    android:textSize="30dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:layout_marginBottom="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@drawable/shape_border_btn_white">
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/shape_border_btn_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp">
+
                 <TextView
-                    android:textColor="@color/default_color"
-                    android:textSize="20dp"
-                    android:text="Payment Method"
                     android:layout_width="200dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="My Orders"
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp" />
+
                 <TextView
-                    android:clickable="true"
-                    android:textColor="@color/default_color_bind"
-                    android:layout_marginLeft="100dp"
-                    android:textSize="30dp"
-                    android:text=">"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:clickable="true"
+                    android:text=">"
+                    android:textColor="@color/default_color_bind"
+                    android:textSize="30dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/shape_border_btn_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Payment Method"
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:clickable="true"
+                    android:text=">"
+                    android:textColor="@color/default_color_bind"
+                    android:textSize="30dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/password_btn"
-                android:gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:layout_marginBottom="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@drawable/shape_border_btn_white">
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/shape_border_btn_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp">
+
                 <TextView
-                    android:textColor="@color/default_color"
-                    android:textSize="20dp"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
                     android:text="Change Password"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:clickable="true"
-                    android:textColor="@color/default_color_bind"
-                    android:layout_marginLeft="100dp"
-                    android:textSize="30dp"
-                    android:text=">"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-            <LinearLayout
-                android:gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:layout_marginBottom="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/shape_border_btn_white">
-                <TextView
                     android:textColor="@color/default_color"
-                    android:textSize="20dp"
-                    android:text="Setting"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"/>
+                    android:textSize="20dp" />
+
                 <TextView
-                    android:clickable="true"
-                    android:textColor="@color/default_color_bind"
-                    android:layout_marginLeft="100dp"
-                    android:textSize="30dp"
-                    android:text=">"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:clickable="true"
+                    android:text=">"
+                    android:textColor="@color/default_color_bind"
+                    android:textSize="30dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="30dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:layout_marginBottom="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@drawable/shape_border_btn_white">
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/shape_border_btn_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp">
+
                 <TextView
-                    android:clickable="true"
-                    android:textColor="@color/default_color"
-                    android:textSize="20dp"
-                    android:text="Logout"
                     android:layout_width="200dp"
-                    android:layout_height="wrap_content"/>
-                 </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:text="Setting"
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:clickable="true"
+                    android:text=">"
+                    android:textColor="@color/default_color_bind"
+                    android:textSize="30dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/shape_border_btn_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:text="Logout"
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp" />
+            </LinearLayout>
 
 
         </LinearLayout>

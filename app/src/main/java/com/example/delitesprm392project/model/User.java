@@ -1,17 +1,26 @@
 package com.example.delitesprm392project.model;
 
 public class User {
-    public String name, email, phone, password, role;
+    public String name, email, phone, password, role,address;
 
-    public User(String name, String email, String phone, String password, String role) {
+    public User(String name, String email, String phone, String password, String role, String address) {
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.password = password;
         this.role = role;
+        this.address = address;
     }
 
     public User() {
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getName() {
@@ -53,4 +62,5 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+
 }

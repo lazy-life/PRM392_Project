@@ -20,7 +20,7 @@
             android:name=".user.UserPassword"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".user.UserManagement"
             android:exported="false" />
         <activity
             android:name=".user.UserProfile"
@@ -32,7 +32,7 @@
             android:name=".Signup"
             android:exported="false" />
         <activity
-            android:name=".user.UserManagement"
+            android:name=".Login"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
