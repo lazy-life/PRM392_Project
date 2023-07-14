@@ -15,7 +15,7 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder {
     public CategoryViewHolder(@NonNull View itemView) {
         super(itemView);
         button = itemView.findViewById(R.id.btnCategory);
-        Log.d("viewholder",button.toString());
+        Log.d("viewholder", button.toString());
         button.setId(getAdapterPosition());
 
     }

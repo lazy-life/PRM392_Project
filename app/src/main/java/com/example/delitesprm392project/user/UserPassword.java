@@ -1,15 +1,15 @@
 package com.example.delitesprm392project.user;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.delitesprm392project.R;
 import com.example.delitesprm392project.model.User;
@@ -73,15 +73,15 @@ public class UserPassword extends AppCompatActivity {
                 String oldPWs = oldPW.getText().toString();
                 String newPWs = newPW.getText().toString();
                 String renewPWs = renewPW.getText().toString();
-                if (oldPWs.isEmpty() || newPWs.isEmpty() || renewPWs.isEmpty()){
+                if (oldPWs.isEmpty() || newPWs.isEmpty() || renewPWs.isEmpty()) {
                     Toast.makeText(UserPassword.this, "Please input all the field", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (!oldPWs.equals(account.getPassword())){
+                if (!oldPWs.equals(account.getPassword())) {
                     Toast.makeText(UserPassword.this, "Wrong old password", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (!newPWs.equals(renewPWs)){
+                if (!newPWs.equals(renewPWs)) {
                     Toast.makeText(UserPassword.this, "Reinput new password", Toast.LENGTH_SHORT).show();
                     return;
                 }

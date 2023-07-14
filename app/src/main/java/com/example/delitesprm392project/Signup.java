@@ -1,9 +1,5 @@
 package com.example.delitesprm392project;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.delitesprm392project.model.User;
@@ -21,7 +18,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -87,7 +83,7 @@ public class Signup extends AppCompatActivity {
                             if (snapshot.hasChild(phone)) {
                                 Toast.makeText(Signup.this, "Phone Number Existed!", Toast.LENGTH_SHORT).show();
                             } else {
-                                Signup(name,email,phone,pass,role,"ha noi");
+                                Signup(name, email, phone, pass, role, "ha noi");
                                 //writeNewUser(name, email, phone, pass, role,"hanoi");
                             }
                         }
@@ -113,7 +109,7 @@ public class Signup extends AppCompatActivity {
     }
 
 
-    private void writeNewUser(String name, String email, String phone, String pass, String role,String addres) {
+    private void writeNewUser(String name, String email, String phone, String pass, String role, String addres) {
         user.setName(name);
         user.setEmail(email);
         user.setPhone(phone);
@@ -145,6 +141,7 @@ public class Signup extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
     public void Signup(String name, String email, String phone, String password, String role, String address) {
 
         firebaseAuth.createUserWithEmailAndPassword(email, password)
@@ -153,7 +150,7 @@ public class Signup extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             String key = databaseReference.child("Users").push().getKey();
-                            User account = new User(name,email,phone,password,role,address);
+                            User account = new User(name, email, phone, password, role, address);
                             databaseReference.child("Users").child(key).setValue(account, new DatabaseReference.CompletionListener() {
                                 @Override
                                 public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
@@ -166,7 +163,7 @@ public class Signup extends AppCompatActivity {
                             });
                         } else {
                             Toast.makeText(Signup.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-                            Log.d("Sugn",task.getException().toString());
+                            Log.d("Sugn", task.getException().toString());
                         }
                     }
 

@@ -1,7 +1,7 @@
 package com.example.delitesprm392project.model;
 
 public class User {
-    public String name, email, phone, password, role,address;
+    public String name, email, phone, password, role, address;
 
     public User(String name, String email, String phone, String password, String role, String address) {
         this.name = name;

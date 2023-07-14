@@ -1,15 +1,15 @@
 package com.example.delitesprm392project.user;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.delitesprm392project.R;
 import com.example.delitesprm392project.model.User;
@@ -20,8 +20,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
 
 public class UserProfile extends AppCompatActivity {
 
@@ -80,7 +78,7 @@ public class UserProfile extends AppCompatActivity {
                 String email = etEmail.getText().toString();
                 String phone = etPhone.getText().toString();
                 String add = etAddress.getText().toString();
-                User newUser = new User(name,email,phone,account.getPassword(),account.getRole(),add);
+                User newUser = new User(name, email, phone, account.getPassword(), account.getRole(), add);
                 databaseReference.child("Users").child(user.getUid()).setValue(newUser, new DatabaseReference.CompletionListener() {
                     @Override
                     public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {

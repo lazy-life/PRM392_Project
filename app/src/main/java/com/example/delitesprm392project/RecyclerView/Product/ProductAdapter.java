@@ -5,9 +5,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.delitesprm392project.RecyclerView.Category.CategoryViewHolder;
-
-public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder>{
+public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
 
     @NonNull
     @Override

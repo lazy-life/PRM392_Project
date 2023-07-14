@@ -3,9 +3,9 @@ package com.example.delitesprm392project.model;
 public class Product {
     private int productid;
     private String productname;
-    private  double productprice;
-    private  int categoryid;
-    private  boolean stocking;
+    private double productprice;
+    private int categoryid;
+    private boolean stocking;
     private String imagePath;
     private String productDes;
 

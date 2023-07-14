@@ -40,21 +40,20 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_weight="0.15"
-                />
+                android:layout_weight="0.15" />
+
             <androidx.appcompat.widget.AppCompatButton
-                android:text="User"
                 android:id="@+id/btnProfile"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:background="@drawable/searchbtn"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="0dp"
-                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="0.15"
-                />
+                android:background="@drawable/searchbtn"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="User"
+                android:textColor="#fff" />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -62,13 +61,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/HomeCategoryRecycleView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
+
     <TextView
         android:id="@+id/newest_products_heading"
         android:layout_width="match_parent"
@@ -175,6 +175,7 @@
         </LinearLayout>
 
     </HorizontalScrollView>
+
     <TextView
         android:id="@+id/current_products_heading"
         android:layout_width="match_parent"
@@ -185,6 +186,7 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/current_products_recyclerview"
         android:layout_width="match_parent"
