@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".RecyclerViewCart">
+    tools:context=".Cart.RecyclerViewCart">
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,7 +20,7 @@
         android:layout_weight="1">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/viewRecycleProductLists"
+            android:id="@+id/viewRecycleCartList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp" />

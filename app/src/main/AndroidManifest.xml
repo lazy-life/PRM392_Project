@@ -17,11 +17,11 @@
         android:theme="@style/Theme.DelitesPRM392Project"
         tools:targetApi="31">
         <activity
-            android:name=".RecyclerViewCart"
-            android:exported="false" />
+            android:name=".Cart.RecyclerViewCart"
+            android:exported="true" />
         <activity
-            android:name=".Cart"
-            android:exported="false" />
+            android:name=".Cart.Cart"
+            android:exported="true" />
         <activity
             android:name=".user.UserPassword"
             android:exported="false" />
