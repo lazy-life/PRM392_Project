@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.delitesprm392project.R;
 import com.example.delitesprm392project.RecyclerView.Product.ProductAdapter;
@@ -16,6 +17,8 @@ import java.util.List;
 public class RecyclerViewCart extends AppCompatActivity {
 
     RecyclerView recyclerView;
+    TextView totalPrice;
+    double sum=0;
     ProductAdapter proAdapter = new ProductAdapter();
     ArrayList<CartItem> cartItems = new ArrayList<CartItem>();
     // linh: fix cung list de hien thi cart
@@ -26,11 +29,11 @@ public class RecyclerViewCart extends AppCompatActivity {
     Product product4 = new Product(4, "Product 4", 40.0, 2, false, "app/src/main/res/drawable/apple2.jpg", "Product 4 description");
     Product product5 = new Product(5, "Product 5", 50.0, 1, true, "app/src/main/res/drawable/apple2.jpg", "Product 5 description");
 
-    CartItem cartItem1 = new CartItem(product1, 0);
-    CartItem cartItem2 = new CartItem(product2, 0);
-    CartItem cartItem3 = new CartItem(product3, 0);
-    CartItem cartItem4 = new CartItem(product4, 0);
-    CartItem cartItem5 = new CartItem(product5, 0);
+    CartItem cartItem1 = new CartItem(product1, 1);
+    CartItem cartItem2 = new CartItem(product2, 1);
+    CartItem cartItem3 = new CartItem(product3, 1);
+    CartItem cartItem4 = new CartItem(product4, 1);
+    CartItem cartItem5 = new CartItem(product5, 1);
 
     // linh: fix cung list de hien thi cart
     CartAdapter cartAdapter;
@@ -41,6 +44,8 @@ public class RecyclerViewCart extends AppCompatActivity {
         setContentView(R.layout.activity_recycler_view_cart);
 
         recyclerView = findViewById(R.id.viewRecycleCartList);
+        totalPrice = findViewById(R.id.tvTotal);
+
         cartItemList2.add(cartItem1);
         cartItemList2.add(cartItem2);
         cartItemList2.add(cartItem3);
@@ -58,11 +63,13 @@ public class RecyclerViewCart extends AppCompatActivity {
         if (cartItemList2 != null) {
             for (CartItem cartItem : cartItemList2) {
                 cartItems.add(cartItem);
+                sum+= cartItem.getTotalPrice();
             }
-            cartAdapter = new CartAdapter(cartItems, RecyclerViewCart.this);
+            cartAdapter = new CartAdapter(cartItems, RecyclerViewCart.this, totalPrice);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
             recyclerView.setAdapter(cartAdapter);
             recyclerView.setLayoutManager(linearLayoutManager);
+            totalPrice.setText(Double.toString(sum));
         }
     }
 }

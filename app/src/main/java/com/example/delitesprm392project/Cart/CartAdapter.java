@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,8 +23,7 @@ import java.util.List;
 public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
     private List<CartItem> cartList;
     private Context mContext;
-
-    public RecyclerViewCart r;
+    private TextView tvTotal;
 
     // test cart
     public CartAdapter() {
@@ -30,9 +31,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
     }
     // test cart
 
-    public CartAdapter(List<CartItem> cartList, Context mContext) {
+    public CartAdapter(List<CartItem> cartList, Context mContext, TextView tvTotal) {
         this.cartList = cartList;
         this.mContext = mContext;
+        this.tvTotal = tvTotal;
     }
 
     ProductAdapter productAdapter = new ProductAdapter();
@@ -55,38 +57,56 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
             Picasso.get().load(cart.getProduct().getImagePath()).into(holder.itemImg);
             holder.itemName.setText(cart.getProduct().getProductname());
             holder.itemPrice.setText(String.valueOf(cart.getProduct().getProductprice()));
+            holder.itemQuantity.setText(String.valueOf(cart.getQuantity()));
         }
 
-        holder.basketLayoutView.setMaxQuantity(10);
-        // set-up basketLayoutView
-        holder.basketLayoutView.setBasketLayoutListener(new BasketLayoutViewListener() {
+        // button decrease
+        holder.btnDec.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClickDecreaseQuantity(int i) {
-                 i = cart.getQuantity();
-                holder.basketLayoutView.setBasketQuantity(i-1, State.None);
-            }
-
-            @Override
-            public void onClickIncreaseQuantity(int i) {
-                i = cart.getQuantity();
-                holder.basketLayoutView.setBasketQuantity(i+1, State.None);
-            }
-
-            @Override
-            public void onClickTrash() {
-            // delete cart
-
-            }
-
-            @Override
-            public void onExceedMaxQuantity(int i) {
+            public void onClick(View view) {
+                int qty = cart.getQuantity();
+                if (qty > 0) {
+                    qty--;
+                    cart.setQuantity(qty);
+                    notifyDataSetChanged();
+                    updateprice();
+                }
+                if (qty <= 0) {
+//                    holder.btnDec.setActivated(false);
+                    int position = holder.getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        // Lấy sản phẩm tương ứng với vị trí được click
+                        CartItem c = cartList.get(position);
+                        cartList.remove(c);
+                    }
+                }
             }
         });
 
+        holder.btnInc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int qty = cart.getQuantity();
+                qty++;
+                cart.setQuantity(qty);
+                notifyDataSetChanged();
+                updateprice();
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return cartList.size();
+    }
+
+
+    public void updateprice() {
+        double sum = 0;
+        int i;
+        for (i = 0; i < cartList.size(); i++)
+            sum = sum + (cartList.get(i).getTotalPrice());
+
+        tvTotal.setText(Double.toString(sum));
     }
 }
