@@ -12,5 +12,11 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+dependencyResolutionManagement {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
 rootProject.name = "Delites PRM392 Project"
 include ':app'
