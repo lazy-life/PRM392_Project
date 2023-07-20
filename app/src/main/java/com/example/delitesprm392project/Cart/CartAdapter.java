@@ -54,9 +54,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
         //        CartItem cart = productAdapter.cartItemList.get(position);
         CartItem cart = cartList.get(position);
         if (cart != null) {
-            Picasso.get().load(cart.getProduct().getImagePath()).into(holder.itemImg);
-            holder.itemName.setText(cart.getProduct().getProductname());
-            holder.itemPrice.setText(String.valueOf(cart.getProduct().getProductprice()));
+            Picasso.get().load(cart.getProduct().getImage()).into(holder.itemImg);
+            holder.itemName.setText(cart.getProduct().getName());
+            holder.itemPrice.setText(String.valueOf(cart.getProduct().getPrice()));
             holder.itemQuantity.setText(String.valueOf(cart.getQuantity()));
         }
 
