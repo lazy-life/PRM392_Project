@@ -3,6 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="default_color">#000</color>
-    <color name="default_color_bind">#D6D6D6</color>
     <color name="grey">#FFB8B5B5</color>
+    <color name="default_color_bind">#64718a</color>
+    <color name="my_green_primary">#00FF00</color>
+
 </resources>

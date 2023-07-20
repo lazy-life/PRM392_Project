@@ -2,8 +2,6 @@ package com.example.delitesprm392project.RecyclerView.ProductManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.delitesprm392project.Home;
@@ -26,42 +25,29 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class ProductManagerRecycleView extends AppCompatActivity implements DataLoadedListener {
+public class ProductUpdateActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    List<Product> productRecycles;
-    ProductManagerAdapter productAdapter;
+    EditText pName;
+    EditText pDescription;
+    EditText pPrice;
+    CheckBox pStocking;
+    Button updateBtn;
 
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
 
-    Button addProduct;
-//    EditText searchTxt;
-//    Button searchBtn;
-
-    public void AddList() {
-        productRecycles = new ArrayList<>();
-        productRecycles.add(new Product(1, "pro 1", 100, 1, true, "draw 1", "ngu"));
-        productRecycles.add(new Product(2, "pro 2", 200, 1, true, "draw 2", "ngu"));
-        productRecycles.add(new Product(3, "pro 3", 300, 1, true, "draw 3", "ngu"));
-        productRecycles.add(new Product(4, "pro 4", 400, 1, true, "draw 4", "ngu"));
-    }
-
-    public void LoadData(){
+    public void UpdateData(Product product){
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Products");
+        databaseReference = firebaseDatabase.getReference("Products").child(String.valueOf(product.getId()-1));
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                productRecycles = new ArrayList<>();
-                for(DataSnapshot data : dataSnapshot.getChildren()) {
-                    Product model = data.getValue(Product.class);
-                    productRecycles.add(model);
-                }
-                onDataLoaded(productRecycles);
+                //cập nhật dữ liệu trên firebase theo product
+                databaseReference.setValue(product);
+                //ve lai trang san pham
+                onDataLoaded();
                 Log.d("TAG", "Data loaded successfully.");
                 // Call a method to update your UI with the new data here
             }
@@ -74,45 +60,44 @@ public class ProductManagerRecycleView extends AppCompatActivity implements Data
         });
     }
 
+    private void onDataLoaded() {
+        Intent intent = new Intent(this, ProductManagerRecycleView.class);
+
+        // Chuyển sang activity ProductDetail
+        this.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_manager_recycle_view);
+        setContentView(R.layout.activity_product_update);
 
-        recyclerView = findViewById(R.id.viewRecycleProductManagerList);
-        addProduct = findViewById(R.id.viewRecycleProductManagerAdd);
-//        searchTxt = findViewById(R.id.viewRecycleProductManagerSearch);
-//        searchBtn = findViewById(R.id.viewRecycleProductManagerSearchBtn);
+        pName = findViewById(R.id.updateProductName);
+        pDescription = findViewById(R.id.updateProductDescription);
+        pPrice = findViewById(R.id.updateProductPrice);
+        updateBtn = findViewById(R.id.updateProductBtn);
+        pStocking = findViewById(R.id.updateProductStocking);
 
-        addProduct.setOnClickListener(new View.OnClickListener() {
+        // Nhận đối tượng Product từ intent
+        Intent intent = getIntent();
+        Product product = (Product) intent.getSerializableExtra("product");
+
+        pName.setText(product.getName());
+        pDescription.setText(product.getDescription());
+        pPrice.setText(String.valueOf(product.getPrice()));
+        pStocking.setChecked(product.isStocking());
+
+        updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ProductAddActivity.class);
-
-                // Gắn đối tượng Product vào intent
-                intent.putExtra("productId", productAdapter.mProducts.size());
-
-                // Chuyển sang activity ProductDetail
-                v.getContext().startActivity(intent);
+                Product updateProduct = new Product();
+                updateProduct.setName(pName.getText().toString());
+                updateProduct.setDescription(pDescription.getText().toString());
+                updateProduct.setPrice(Double.parseDouble(String.valueOf(pPrice.getText())) );
+                updateProduct.setStocking(pStocking.isChecked());
+                UpdateData(updateProduct);
             }
         });
-
-        LoadData();
-
-//        productAdapter = new ProductManagerAdapter(productRecycles, ProductManagerRecycleView.this);
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-//        recyclerView.setAdapter(productAdapter);
-//        recyclerView.setLayoutManager(linearLayoutManager);
-    }
-
-
-    @Override
-    public void onDataLoaded(List<Product> products) {
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        productAdapter = new ProductManagerAdapter(products, ProductManagerRecycleView.this);
-        recyclerView.setAdapter(productAdapter);
-        recyclerView.setLayoutManager(linearLayoutManager);
     }
 
     @Override

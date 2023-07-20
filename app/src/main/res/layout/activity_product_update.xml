@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecyclerView.ProductManager.ProductUpdateActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Name:"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateProductName"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_border"
+        android:hint="Product Name"
+        android:padding="15dp"
+        android:textColor="#000"
+        android:textColorHint="#808080"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Description:"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateProductDescription"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_border"
+        android:hint="Description"
+        android:padding="15dp"
+        android:textColor="#000"
+        android:textColorHint="#808080"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Price:"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateProductPrice"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_border"
+        android:hint="Price"
+        android:padding="15dp"
+        android:textColor="#000"
+        android:textColorHint="#808080"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Stocking:"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateProductStocking"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/updateProductBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shape_border_btn"
+        android:text="Update Product"
+        android:textColor="#fff" />
+
+</LinearLayout>
