@@ -4,13 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.delitesprm392project.R;
 import com.example.delitesprm392project.RecyclerView.Product.ProductAdapter;
 import com.example.delitesprm392project.model.Product;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +22,8 @@ public class RecyclerViewCart extends AppCompatActivity {
 
     RecyclerView recyclerView;
     TextView totalPrice;
-    double sum=0;
+    Button btnCheckout;
+    double sum = 0;
     ProductAdapter proAdapter = new ProductAdapter();
     ArrayList<CartItem> cartItems = new ArrayList<CartItem>();
     // linh: fix cung list de hien thi cart
@@ -45,6 +50,7 @@ public class RecyclerViewCart extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.viewRecycleCartList);
         totalPrice = findViewById(R.id.tvTotal);
+        btnCheckout = findViewById(R.id.btnCheckout);
 
         cartItemList2.add(cartItem1);
         cartItemList2.add(cartItem2);
@@ -63,7 +69,7 @@ public class RecyclerViewCart extends AppCompatActivity {
         if (cartItemList2 != null) {
             for (CartItem cartItem : cartItemList2) {
                 cartItems.add(cartItem);
-                sum+= cartItem.getTotalPrice();
+                sum += cartItem.getTotalPrice();
             }
             cartAdapter = new CartAdapter(cartItems, RecyclerViewCart.this, totalPrice);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -71,5 +77,17 @@ public class RecyclerViewCart extends AppCompatActivity {
             recyclerView.setLayoutManager(linearLayoutManager);
             totalPrice.setText(Double.toString(sum));
         }
+
+        btnCheckout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RecyclerViewCart.this, RecyclerViewOrder.class);
+                intent.putExtra("total", totalPrice.getText());
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("cartList", (Serializable) cartItems);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
 }

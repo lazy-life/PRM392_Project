@@ -1,6 +1,8 @@
 package com.example.delitesprm392project.model;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private int productid;
     private String productname;
     private double productprice;
