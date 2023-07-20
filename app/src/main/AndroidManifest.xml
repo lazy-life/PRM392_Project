@@ -17,8 +17,17 @@
         android:theme="@style/Theme.DelitesPRM392Project"
         tools:targetApi="31">
         <activity
+            android:name=".RecyclerView.ProductManager.ProductDeteleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerView.ProductManager.ProductAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerView.ProductManager.ProductUpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".RecyclerView.ProductManager.ProductManagerRecycleView"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,9 +60,7 @@
             android:exported="false" />
         <activity
             android:name=".Login"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
