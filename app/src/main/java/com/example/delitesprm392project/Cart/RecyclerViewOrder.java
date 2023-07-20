@@ -109,7 +109,7 @@ public class RecyclerViewOrder extends AppCompatActivity {
                 order.setShipAddress(address);
                 order.setOrderDate(Calendar.getInstance().getTime());
                 for (CartItem c : list) {
-                    order.setProductId(c.getProduct().getProductid());
+                    order.setProductId(c.getProduct().getId());
                     order.setQuantity(c.getQuantity());
                     order.setTotalPrice(c.getTotalPrice());
                     AddData(order);

@@ -40,11 +40,11 @@ public class CartOrderAdapter extends RecyclerView.Adapter<CartOrderViewHolder> 
         CartItem cart = cartList.get(position);
         if (cart != null) {
             if (holder.cartOrderImg != null) {
-                Picasso.get().load(cart.getProduct().getImagePath()).into(holder.cartOrderImg);
+                Picasso.get().load(cart.getProduct().getImage()).into(holder.cartOrderImg);
             }
 
-            holder.cartOrderName.setText(cart.getProduct().getProductname());
-            holder.cartOrderPrice.setText(String.valueOf(cart.getProduct().getProductprice()));
+            holder.cartOrderName.setText(cart.getProduct().getName());
+            holder.cartOrderPrice.setText(String.valueOf(cart.getProduct().getPrice()));
             holder.cartOrderQuantity.setText(String.valueOf(cart.getQuantity()));
         }
     }
