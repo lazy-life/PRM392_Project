@@ -26,6 +26,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Cart.RecyclerViewCart"
+            android:exported="true" />
+        <activity
+            android:name=".Cart.Cart"
+            android:exported="true" />
+        <activity
+            android:name=".DetailProduct"
+            android:exported="true" />
+        <activity
             android:name=".user.UserPassword"
             android:exported="false" />
         <activity
