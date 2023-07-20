@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,9 @@ import com.example.delitesprm392project.RecyclerView.ProductManager.ProductManag
 import com.example.delitesprm392project.model.Category;
 import com.example.delitesprm392project.model.Product;
 import com.example.delitesprm392project.user.UserManagement;
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,15 +41,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button btnProfile = findViewById(R.id.btnProfile);
 
-        btnProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), UserManagement.class);
-                view.getContext().startActivity(intent);
-            }
-        });
         categoryRecyclerView = findViewById(R.id.HomeCategoryRecycleView);
         categoryList = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
@@ -92,8 +88,12 @@ public class Home extends AppCompatActivity {
             return true;
         }
         if (item.getItemId()==R.id.menuLogout){
-            Intent intent = new Intent(this, Home.class);
-
+            Intent intent = new Intent(this, Login.class);
+            AuthUI.getInstance().signOut(getApplicationContext()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                public void onComplete(@NonNull Task<Void> task) {
+                    Toast.makeText(getApplicationContext(), "Logout successful", Toast.LENGTH_SHORT).show();
+                }
+            });
             // Chuyển sang activity add product
             this.startActivity(intent);
             return true;

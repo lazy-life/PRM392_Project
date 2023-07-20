@@ -149,8 +149,12 @@ public class UserManagement extends AppCompatActivity {
             return true;
         }
         if (item.getItemId()==R.id.menuLogout){
-            Intent intent = new Intent(this, Home.class);
-
+            Intent intent = new Intent(this, Login.class);
+            AuthUI.getInstance().signOut(getApplicationContext()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                public void onComplete(@NonNull Task<Void> task) {
+                    Toast.makeText(getApplicationContext(), "Logout successful", Toast.LENGTH_SHORT).show();
+                }
+            });
             // Chuyển sang activity add product
             this.startActivity(intent);
             return true;
