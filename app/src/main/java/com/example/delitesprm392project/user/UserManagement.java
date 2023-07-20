@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.delitesprm392project.Home;
 import com.example.delitesprm392project.Login;
 import com.example.delitesprm392project.R;
 import com.example.delitesprm392project.model.User;
@@ -67,6 +68,14 @@ public class UserManagement extends AppCompatActivity {
                 }
             });
         }
+
+        findViewById(R.id.manageBack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), Home.class);
+                view.getContext().startActivity(intent);
+            }
+        });
 
         LinearLayout profileBtn = findViewById(R.id.profile_btn);
         profileBtn.setOnClickListener(new View.OnClickListener() {

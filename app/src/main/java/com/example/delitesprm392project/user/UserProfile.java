@@ -1,5 +1,6 @@
 package com.example.delitesprm392project.user;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -90,6 +91,14 @@ public class UserProfile extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
+
+        findViewById(R.id.profileBack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), UserManagement.class);
+                view.getContext().startActivity(intent);
             }
         });
     }
