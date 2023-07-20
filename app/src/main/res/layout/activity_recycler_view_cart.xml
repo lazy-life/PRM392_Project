@@ -31,7 +31,6 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_gravity="right"
         android:background="@color/white">
 
         <LinearLayout
@@ -67,7 +66,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_border_btn"
-                android:text="ĐẶT HÀNG"
+                android:text="THANH TOÁN"
+                android:textSize="13dp"
                 android:textColor="#fff" />
         </LinearLayout>
 

@@ -65,19 +65,21 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
             @Override
             public void onClick(View view) {
                 int qty = cart.getQuantity();
-                if (qty > 0) {
+                if (qty > 1) {
                     qty--;
                     cart.setQuantity(qty);
                     notifyDataSetChanged();
                     updateprice();
                 }
-                if (qty <= 0) {
+                if (qty == 1) {
 //                    holder.btnDec.setActivated(false);
                     int position = holder.getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION) {
                         // Lấy sản phẩm tương ứng với vị trí được click
                         CartItem c = cartList.get(position);
                         cartList.remove(c);
+                        updateprice();
+                        notifyDataSetChanged();
                     }
                 }
             }
