@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductManagerRecycleView extends AppCompatActivity {
+public class ProductManagerRecycleView extends AppCompatActivity implements DataLoadedListener {
 
     RecyclerView recyclerView;
     List<Product> productRecycles;
@@ -42,6 +42,31 @@ public class ProductManagerRecycleView extends AppCompatActivity {
         productRecycles.add(new Product(4, "pro 4", 400, 1, true, "draw 4", "ngu"));
     }
 
+    public void LoadData(){
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("Products");
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                productRecycles = new ArrayList<>();
+                for(DataSnapshot data : dataSnapshot.getChildren()) {
+                    Product model = data.getValue(Product.class);
+                    productRecycles.add(model);
+                }
+                onDataLoaded(productRecycles);
+                Log.d("TAG", "Data loaded successfully.");
+                // Call a method to update your UI with the new data here
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("TAG", "Failed to load data. Error message: " + error.getMessage());
+                // Handle the error here
+            }
+        });
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,30 +77,20 @@ public class ProductManagerRecycleView extends AppCompatActivity {
         searchTxt = findViewById(R.id.viewRecycleProductManagerSearch);
         searchBtn = findViewById(R.id.viewRecycleProductManagerSearchBtn);
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Products");
+        LoadData();
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                productRecycles = new ArrayList<>();
-                for(DataSnapshot data : dataSnapshot.getChildren()) {
-                    Product model = data.getValue(Product.class);
-                    productRecycles.add(model);
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.d("dwdaw ","ddd");
-            }
-        });
+//        productAdapter = new ProductManagerAdapter(productRecycles, ProductManagerRecycleView.this);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+//        recyclerView.setAdapter(productAdapter);
+//        recyclerView.setLayoutManager(linearLayoutManager);
+    }
 
-        AddList();
 
-        productAdapter = new ProductManagerAdapter(productRecycles, ProductManagerRecycleView.this);
+    @Override
+    public void onDataLoaded(List<Product> products) {
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        productAdapter = new ProductManagerAdapter(products, ProductManagerRecycleView.this);
         recyclerView.setAdapter(productAdapter);
         recyclerView.setLayoutManager(linearLayoutManager);
     }

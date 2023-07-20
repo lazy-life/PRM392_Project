@@ -5,7 +5,7 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:layout_width="85dp"
+        android:layout_width="45dp"
         android:layout_height="85dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
@@ -13,8 +13,8 @@
         android:id="@+id/viewRecycleProductManagerImage"
         android:src="@drawable/nahida"/>
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="85dp"
         android:orientation="vertical"
         android:layout_margin="10dp">
 
