@@ -8,12 +8,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.delitesprm392project.Home;
 import com.example.delitesprm392project.R;
 import com.example.delitesprm392project.model.Product;
+import com.example.delitesprm392project.user.UserManagement;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,8 +38,8 @@ public class ProductManagerRecycleView extends AppCompatActivity implements Data
     FirebaseDatabase firebaseDatabase;
 
     Button addProduct;
-    EditText searchTxt;
-    Button searchBtn;
+//    EditText searchTxt;
+//    Button searchBtn;
 
     public void AddList() {
         productRecycles = new ArrayList<>();
@@ -76,8 +81,8 @@ public class ProductManagerRecycleView extends AppCompatActivity implements Data
 
         recyclerView = findViewById(R.id.viewRecycleProductManagerList);
         addProduct = findViewById(R.id.viewRecycleProductManagerAdd);
-        searchTxt = findViewById(R.id.viewRecycleProductManagerSearch);
-        searchBtn = findViewById(R.id.viewRecycleProductManagerSearchBtn);
+//        searchTxt = findViewById(R.id.viewRecycleProductManagerSearch);
+//        searchBtn = findViewById(R.id.viewRecycleProductManagerSearchBtn);
 
         addProduct.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,5 +113,46 @@ public class ProductManagerRecycleView extends AppCompatActivity implements Data
         productAdapter = new ProductManagerAdapter(products, ProductManagerRecycleView.this);
         recyclerView.setAdapter(productAdapter);
         recyclerView.setLayoutManager(linearLayoutManager);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==R.id.menuProductList){
+            Intent intent = new Intent(this, Home.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        if (item.getItemId()==R.id.menuProductManager){
+            Intent intent = new Intent(this, ProductManagerRecycleView.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        if (item.getItemId()==R.id.menuUserManager){
+            Intent intent = new Intent(this, UserManagement.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        if (item.getItemId()==R.id.menuLogout){
+            Intent intent = new Intent(this, Home.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

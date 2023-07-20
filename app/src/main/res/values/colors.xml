@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="default_color">#000</color>
     <color name="default_color_bind">#64718a</color>
+    <color name="my_green_primary">#00FF00</color>
+
 </resources>

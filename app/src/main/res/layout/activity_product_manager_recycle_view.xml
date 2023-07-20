@@ -7,20 +7,26 @@
     tools:context=".RecyclerView.ProductManager.ProductManagerRecycleView"
     android:orientation="vertical">
 
-    <EditText
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/viewRecycleProductManagerSearch"/>-->
+<!--    <Button-->
+<!--        android:id="@+id/viewRecycleProductManagerSearchBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Search Product"/>-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/viewRecycleProductManagerAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/viewRecycleProductManagerSearch"/>
-    <Button
-        android:id="@+id/viewRecycleProductManagerSearchBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search Product"/>
-    <Button
-        android:id="@+id/viewRecycleProductManagerAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Product"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shape_border_btn"
+        android:text="Add Product"
+        android:textColor="#fff" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/viewRecycleProductManagerList"
         android:layout_width="match_parent"

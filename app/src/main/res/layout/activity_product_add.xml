@@ -14,7 +14,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/addProductName"/>
+        android:id="@+id/addProductName"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_border"
+        android:hint="Product Name"
+        android:padding="15dp"
+        android:textColor="#000"
+        android:textColorHint="#808080"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +28,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/addProductDescription"/>
+        android:id="@+id/addProductDescription"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_border"
+        android:hint="Description"
+        android:padding="15dp"
+        android:textColor="#000"
+        android:textColorHint="#808080"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +42,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/addProductPrice"/>
+        android:id="@+id/addProductPrice"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_border"
+        android:hint="Price"
+        android:padding="15dp"
+        android:textColor="#000"
+        android:textColorHint="#808080"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,10 +65,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/addProductStocking"/>
-    <Button
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addProductBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/addProductBtn"
-        android:text="Add Product"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shape_border_btn"
+        android:text="Add Product"
+        android:textColor="#fff" />
 
 </LinearLayout>

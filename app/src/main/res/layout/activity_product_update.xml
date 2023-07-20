@@ -14,7 +14,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/updateProductName"/>
+        android:id="@+id/updateProductName"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_border"
+        android:hint="Product Name"
+        android:padding="15dp"
+        android:textColor="#000"
+        android:textColorHint="#808080"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +28,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/updateProductDescription"/>
+        android:id="@+id/updateProductDescription"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_border"
+        android:hint="Description"
+        android:padding="15dp"
+        android:textColor="#000"
+        android:textColorHint="#808080"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +42,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/updateProductPrice"/>
+        android:id="@+id/updateProductPrice"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_border"
+        android:hint="Price"
+        android:padding="15dp"
+        android:textColor="#000"
+        android:textColorHint="#808080"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,10 +57,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/updateProductStocking"/>
-    <Button
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/updateProductBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/updateProductBtn"
-        android:text="Update Product"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shape_border_btn"
+        android:text="Update Product"
+        android:textColor="#fff" />
 
 </LinearLayout>

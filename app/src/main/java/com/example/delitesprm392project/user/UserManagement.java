@@ -2,6 +2,9 @@ package com.example.delitesprm392project.user;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -14,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.delitesprm392project.Home;
 import com.example.delitesprm392project.Login;
 import com.example.delitesprm392project.R;
+import com.example.delitesprm392project.RecyclerView.ProductManager.ProductManagerRecycleView;
 import com.example.delitesprm392project.model.User;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -113,5 +117,45 @@ public class UserManagement extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==R.id.menuProductList){
+            Intent intent = new Intent(this, Home.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        if (item.getItemId()==R.id.menuProductManager){
+            Intent intent = new Intent(this, ProductManagerRecycleView.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        if (item.getItemId()==R.id.menuUserManager){
+            Intent intent = new Intent(this, UserManagement.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        if (item.getItemId()==R.id.menuLogout){
+            Intent intent = new Intent(this, Home.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }

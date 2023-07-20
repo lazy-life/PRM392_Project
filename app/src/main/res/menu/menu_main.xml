@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#64b903"
+    android:background="#64b903">
+
+    <item android:title="Product List"
+        android:id="@+id/menuProductList"/>
+    <item android:title="Product Management"
+        android:id="@+id/menuProductManager"/>
+    <item android:title="User Management"
+        android:id="@+id/menuUserManager"/>
+    <item android:title="Logout"
+        android:id="@+id/menuLogout"/>
+
+</menu>
