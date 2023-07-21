@@ -9,9 +9,9 @@
 
 
     <LinearLayout
-        android:background="@color/green"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/green">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/manageBack"
@@ -20,6 +20,7 @@
             android:background="@drawable/back"
             android:textAlignment="textStart" />
     </LinearLayout>
+
     <ImageView
         android:id="@+id/userImg"
         android:layout_width="150dp"
@@ -69,6 +70,14 @@
                 android:paddingLeft="20dp">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/account_info"
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp" />
+
+                <TextView
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="Account Informations"
@@ -78,11 +87,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/next_24"
                     android:clickable="true"
-                    android:text=">"
                     android:textColor="@color/default_color_bind"
-                    android:textSize="30dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -92,6 +101,14 @@
                 android:background="@drawable/shape_border_btn_white"
                 android:gravity="center_vertical"
                 android:paddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/shopping_cart_24"
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:layout_width="200dp"
@@ -103,11 +120,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/next_24"
                     android:clickable="true"
-                    android:text=">"
                     android:textColor="@color/default_color_bind"
-                    android:textSize="30dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -119,6 +136,14 @@
                 android:paddingLeft="20dp">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/payment_24"
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp" />
+
+                <TextView
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="Payment Method"
@@ -128,11 +153,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/next_24"
                     android:clickable="true"
-                    android:text=">"
-                    android:textColor="@color/default_color_bind"
-                    android:textSize="30dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -145,6 +169,14 @@
                 android:paddingLeft="20dp">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/password_24"
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp" />
+
+                <TextView
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="Change Password"
@@ -154,11 +186,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/next_24"
                     android:clickable="true"
-                    android:text=">"
-                    android:textColor="@color/default_color_bind"
-                    android:textSize="30dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -170,6 +201,14 @@
                 android:paddingLeft="20dp">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/settings_24"
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp" />
+
+                <TextView
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="Setting"
@@ -179,11 +218,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/next_24"
                     android:clickable="true"
-                    android:text=">"
-                    android:textColor="@color/default_color_bind"
-                    android:textSize="30dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -196,6 +234,13 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="20dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/logout_24"
+                    android:textColor="@color/default_color"
+                    android:textSize="20dp" />
                 <TextView
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"

@@ -7,17 +7,18 @@
     tools:context=".user.UserProfile">
 
     <LinearLayout
-        android:background="@color/green"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/green">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/manageBack"
+            android:id="@+id/profileBack"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:background="@drawable/back"
             android:textAlignment="textStart" />
     </LinearLayout>
+
     <TextView
         android:id="@+id/tvProfileName"
         android:layout_width="match_parent"
@@ -60,9 +61,10 @@
                 android:paddingLeft="20dp">
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/name_24"
                     android:textColor="@color/default_color_bind"
                     android:textSize="20dp" />
 
@@ -84,9 +86,10 @@
                 android:paddingLeft="20dp">
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/email_24"
                     android:textColor="@color/default_color_bind"
                     android:textSize="20dp" />
 
@@ -108,9 +111,10 @@
                 android:paddingLeft="20dp">
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Phone"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/contact_phone_24"
                     android:textColor="@color/default_color_bind"
                     android:textSize="20dp" />
 
@@ -132,9 +136,10 @@
                 android:paddingLeft="20dp">
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Address"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/location_on_24"
                     android:textColor="@color/default_color_bind"
                     android:textSize="20dp" />
 
