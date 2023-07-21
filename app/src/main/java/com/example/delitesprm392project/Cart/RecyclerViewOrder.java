@@ -21,6 +21,7 @@ import com.example.delitesprm392project.Login;
 import com.example.delitesprm392project.R;
 import com.example.delitesprm392project.Signup;
 import com.example.delitesprm392project.model.Order;
+import com.example.delitesprm392project.model.Product;
 import com.example.delitesprm392project.model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -113,13 +114,41 @@ public class RecyclerViewOrder extends AppCompatActivity {
                     order.setProductId(c.getProduct().getId());
                     order.setQuantity(c.getQuantity());
                     order.setTotalPrice(c.getTotalPrice());
+                    Product pro = new Product();
+                    pro = c.getProduct();
+                    pro.setQuantity(pro.getQuantity()-c.getQuantity());
+                    UpdateData(pro);
                     AddData(order);
                 }
+
+                list.clear();
 
             }
         });
 
 
+    }
+
+    public void UpdateData(Product product){
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("Products").child(String.valueOf(product.getId()-1));
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //cập nhật dữ liệu trên firebase theo product
+                databaseReference.setValue(product);
+                //ve lai trang san pham
+                Log.d("TAG", "Data loaded successfully.");
+                // Call a method to update your UI with the new data here
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("TAG", "Failed to load data. Error message: " + error.getMessage());
+                // Handle the error here
+            }
+        });
     }
 
     public void AddData(Order product) {

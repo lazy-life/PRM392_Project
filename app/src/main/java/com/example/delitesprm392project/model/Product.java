@@ -10,11 +10,12 @@ public class Product implements Serializable {
     private boolean stocking;
     private String image;
     private String description;
+    private int quantity;
 
     public Product() {
     }
 
-    public Product(int id, String name, double price, int categoryId, boolean stocking, String image, String description) {
+    public Product(int id, String name, double price, int categoryId, boolean stocking, String image, String description, int quantity) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -22,6 +23,15 @@ public class Product implements Serializable {
         this.stocking = stocking;
         this.image = image;
         this.description = description;
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public int getId() {

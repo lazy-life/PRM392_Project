@@ -88,7 +88,7 @@ public class ProductAddActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Product product = new Product(productId, pName.getText().toString()
                         , Double.parseDouble(pPrice.getText().toString()), pCategory.getValue()
-                        , pStocking.isChecked(), "", pDescription.getText().toString());
+                        , pStocking.isChecked(), "", pDescription.getText().toString(), 30);
 
                 AddData(product);
             }

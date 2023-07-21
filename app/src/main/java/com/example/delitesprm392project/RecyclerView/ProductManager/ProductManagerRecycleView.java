@@ -42,13 +42,13 @@ public class ProductManagerRecycleView extends AppCompatActivity implements Data
 //    EditText searchTxt;
 //    Button searchBtn;
 
-    public void AddList() {
-        productRecycles = new ArrayList<>();
-        productRecycles.add(new Product(1, "pro 1", 100, 1, true, "draw 1", "ngu"));
-        productRecycles.add(new Product(2, "pro 2", 200, 1, true, "draw 2", "ngu"));
-        productRecycles.add(new Product(3, "pro 3", 300, 1, true, "draw 3", "ngu"));
-        productRecycles.add(new Product(4, "pro 4", 400, 1, true, "draw 4", "ngu"));
-    }
+//    public void AddList() {
+//        productRecycles = new ArrayList<>();
+//        productRecycles.add(new Product(1, "pro 1", 100, 1, true, "draw 1", "ngu"));
+//        productRecycles.add(new Product(2, "pro 2", 200, 1, true, "draw 2", "ngu"));
+//        productRecycles.add(new Product(3, "pro 3", 300, 1, true, "draw 3", "ngu"));
+//        productRecycles.add(new Product(4, "pro 4", 400, 1, true, "draw 4", "ngu"));
+//    }
 
     public void LoadData(){
         firebaseDatabase = FirebaseDatabase.getInstance();
