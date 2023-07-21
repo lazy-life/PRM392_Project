@@ -7,6 +7,7 @@
     <color name="default_color_bind">#64718a</color>
     <color name="my_green_primary">#00FF00</color>
     <color name="pink">#FFFDDBE6</color>
+    <color name="green">#64b903</color>
 
 
 </resources>
