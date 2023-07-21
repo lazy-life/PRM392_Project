@@ -24,7 +24,7 @@ public class RecyclerViewCart extends AppCompatActivity {
     TextView totalPrice;
     Button btnCheckout;
     double sum = 0;
-    ProductAdapter proAdapter = new ProductAdapter();
+//    ProductAdapter proAdapter = new ProductAdapter();
     ArrayList<CartItem> cartItems = new ArrayList<CartItem>();
     // linh: fix cung list de hien thi cart
     public static List<CartItem> cartItemList2 = new ArrayList<>();

@@ -5,12 +5,35 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.delitesprm392project.R;
+import com.example.delitesprm392project.model.Product;
 
-public class Cart extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart);
+public class Cart {
+    private static Cart instance;
+    private List<CartItem> cartList;
+
+    private Cart() {
+        cartList = new ArrayList<>();
+    }
+
+    public static Cart getInstance() {
+        if (instance == null) {
+            instance = new Cart();
+        }
+        return instance;
+    }
+
+    public void addCartItem(CartItem cartItem) {
+        cartList.add(cartItem);
+    }
+
+    public void removeCartItem(CartItem cartItem) {
+        cartList.remove(cartItem);
+    }
+
+    public List<CartItem> getCartList() {
+        return cartList;
     }
 }

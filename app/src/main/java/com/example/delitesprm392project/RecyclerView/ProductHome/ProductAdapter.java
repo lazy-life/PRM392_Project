@@ -1,6 +1,7 @@
 package com.example.delitesprm392project.RecyclerView.ProductHome;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.delitesprm392project.Cart.CartItem;
+import com.example.delitesprm392project.DetailProduct;
 import com.example.delitesprm392project.R;
 import com.example.delitesprm392project.RecyclerView.Category.CategoryViewHolder;
 import com.example.delitesprm392project.model.Product;
@@ -41,6 +43,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
         Product product = productList.get(position);
         holder.productName.setText(product.getName());
         holder.productPrice.setText(String.valueOf(product.getPrice()));
+        holder.productImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent  = new Intent(mContext, DetailProduct.class);
+                intent.putExtra("object_product",product);
+                mContext.startActivity(intent);
+            }
+        });
 
 
     }
