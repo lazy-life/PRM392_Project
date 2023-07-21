@@ -52,6 +52,16 @@
                     android:gravity="center_vertical|center_horizontal"
                     android:text="Search"
                     android:textColor="#fff" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnProfile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.15"
+                    android:background="@drawable/account"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="#fff" />
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
 

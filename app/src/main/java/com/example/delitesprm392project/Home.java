@@ -22,6 +22,7 @@ import com.example.delitesprm392project.RecyclerView.Category.CategoryAdapter;
 import com.example.delitesprm392project.RecyclerView.ProductHome.ProductAdapter;
 import com.example.delitesprm392project.model.Category;
 import com.example.delitesprm392project.model.Product;
+import com.example.delitesprm392project.user.UserManagement;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -50,6 +51,16 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         search = findViewById(R.id.home_search);
         btnSearch = findViewById(R.id.btn_home_search);
+
+        Button btnProfile = findViewById(R.id.btnProfile);
+
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), UserManagement.class);
+                view.getContext().startActivity(intent);
+            }
+        });
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
