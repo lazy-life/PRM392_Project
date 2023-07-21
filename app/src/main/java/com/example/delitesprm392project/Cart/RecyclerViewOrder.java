@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.delitesprm392project.DetailProduct;
 import com.example.delitesprm392project.Home;
 import com.example.delitesprm392project.Login;
 import com.example.delitesprm392project.R;
@@ -146,6 +147,7 @@ public class RecyclerViewOrder extends AppCompatActivity {
     }
 
     private void onDataLoaded() {
+        Toast.makeText(RecyclerViewOrder.this, "Order successfully", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(RecyclerViewOrder.this, Home.class);
         this.startActivity(intent);
     }
