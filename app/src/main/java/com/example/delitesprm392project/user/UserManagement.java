@@ -72,7 +72,17 @@ public class UserManagement extends AppCompatActivity {
                 }
             });
         }
-
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent(view.getContext(), UserImage.class);
+//                view.getContext().startActivity(intent);
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select Your Image"), 101);
+            }
+        });
         findViewById(R.id.manageBack).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
