@@ -41,6 +41,15 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        Button btnProfile = findViewById(R.id.btnProfile);
+
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), UserManagement.class);
+                view.getContext().startActivity(intent);
+            }
+        });
 
         categoryRecyclerView = findViewById(R.id.HomeCategoryRecycleView);
         categoryList = new ArrayList<>();
