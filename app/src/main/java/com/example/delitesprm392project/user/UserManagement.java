@@ -1,6 +1,7 @@
 package com.example.delitesprm392project.user;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -36,6 +37,7 @@ public class UserManagement extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
     DatabaseReference databaseReference;
+    ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +48,22 @@ public class UserManagement extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 
-        ImageView img = findViewById(R.id.userImg);
-        img.setBackgroundResource(R.drawable.avatar);
+        img = findViewById(R.id.userImg);
+//        img.setBackgroundResource(R.drawable.avatar);
         TextView name = findViewById(R.id.userName);
         TextView email = findViewById(R.id.userEmail);
+
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent(view.getContext(), UserImage.class);
+//                view.getContext().startActivity(intent);
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select Your Image"), 101);
+            }
+        });
 
 
         if (user == null) {
@@ -160,6 +174,16 @@ public class UserManagement extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 101 && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            Uri imageUri = data.getData();
+            img.setImageURI(imageUri);
+        }
     }
 
 }
