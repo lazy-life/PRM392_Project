@@ -1,6 +1,7 @@
 package com.example.delitesprm392project.user;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -37,6 +38,7 @@ public class UserManagement extends AppCompatActivity {
     FirebaseUser user;
     DatabaseReference databaseReference;
 
+    ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +48,7 @@ public class UserManagement extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 
-        ImageView img = findViewById(R.id.userImg);
+        img = findViewById(R.id.userImg);
         img.setBackgroundResource(R.drawable.avatar);
         TextView name = findViewById(R.id.userName);
         TextView email = findViewById(R.id.userEmail);
@@ -83,6 +85,7 @@ public class UserManagement extends AppCompatActivity {
                 startActivityForResult(Intent.createChooser(intent, "Select Your Image"), 101);
             }
         });
+
         findViewById(R.id.manageBack).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,28 +140,28 @@ public class UserManagement extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId()==R.id.menuProductList){
+        if (item.getItemId() == R.id.menuProductList) {
             Intent intent = new Intent(this, Home.class);
 
             // Chuyển sang activity add product
             this.startActivity(intent);
             return true;
         }
-        if (item.getItemId()==R.id.menuProductManager){
+        if (item.getItemId() == R.id.menuProductManager) {
             Intent intent = new Intent(this, ProductManagerRecycleView.class);
 
             // Chuyển sang activity add product
             this.startActivity(intent);
             return true;
         }
-        if (item.getItemId()==R.id.menuUserManager){
+        if (item.getItemId() == R.id.menuUserManager) {
             Intent intent = new Intent(this, UserManagement.class);
 
             // Chuyển sang activity add product
             this.startActivity(intent);
             return true;
         }
-        if (item.getItemId()==R.id.menuLogout){
+        if (item.getItemId() == R.id.menuLogout) {
             Intent intent = new Intent(this, Login.class);
             AuthUI.getInstance().signOut(getApplicationContext()).addOnCompleteListener(new OnCompleteListener<Void>() {
                 public void onComplete(@NonNull Task<Void> task) {
@@ -170,6 +173,16 @@ public class UserManagement extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 101 && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            Uri imageUri = data.getData();
+            img.setImageURI(imageUri);
+        }
     }
 
 }
