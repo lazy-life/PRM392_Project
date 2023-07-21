@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.delitesprm392project.Cart.RecyclerViewCart;
 import com.example.delitesprm392project.Home;
 import com.example.delitesprm392project.R;
 import com.example.delitesprm392project.model.Product;
@@ -148,6 +149,13 @@ public class ProductManagerRecycleView extends AppCompatActivity implements Data
         }
         if (item.getItemId()==R.id.menuLogout){
             Intent intent = new Intent(this, Home.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        if (item.getItemId()==R.id.menuCart){
+            Intent intent = new Intent(this, RecyclerViewCart.class);
 
             // Chuyển sang activity add product
             this.startActivity(intent);

@@ -65,17 +65,26 @@
         android:layout_height="match_parent"
         android:gravity="center">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnRecycleProductManagerUpdate"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Update"/>
-        <Button
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/shape_border_btn"
+            android:text="Update"
+            android:textColor="#fff" />
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnRecycleProductManagerDelete"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Delete"/>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/shape_border_btn"
+            android:text="Delete"
+            android:textColor="#fff" />
     </LinearLayout>
 </LinearLayout>

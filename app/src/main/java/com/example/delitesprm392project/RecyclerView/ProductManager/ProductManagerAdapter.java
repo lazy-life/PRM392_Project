@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.delitesprm392project.R;
 import com.example.delitesprm392project.model.Product;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -37,6 +38,8 @@ public class ProductManagerAdapter extends RecyclerView.Adapter<ProductManagerHo
     @Override
     public void onBindViewHolder(@NonNull ProductManagerHolder holder,@SuppressLint("RecyclerView")  int position) {
         Product product = mProducts.get(position);
+
+        Picasso.get().load(product.getImage()).into(holder.image);
         holder.productName.setText(product.getName());
         holder.category.setText(String.valueOf(product.getCategoryId()));
         holder.price.setText(String.valueOf(product.getPrice()));

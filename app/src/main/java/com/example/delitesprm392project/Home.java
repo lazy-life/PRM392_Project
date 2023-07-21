@@ -18,8 +18,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.delitesprm392project.Cart.RecyclerViewCart;
 import com.example.delitesprm392project.RecyclerView.Category.CategoryAdapter;
 import com.example.delitesprm392project.RecyclerView.ProductHome.ProductAdapter;
+import com.example.delitesprm392project.RecyclerView.ProductManager.ProductManagerRecycleView;
 import com.example.delitesprm392project.model.Category;
 import com.example.delitesprm392project.model.Product;
 import com.example.delitesprm392project.user.UserManagement;
@@ -181,5 +183,52 @@ public class Home extends AppCompatActivity {
         return false;
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==R.id.menuProductList){
+            Intent intent = new Intent(this, Home.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        if (item.getItemId()==R.id.menuProductManager){
+            Intent intent = new Intent(this, ProductManagerRecycleView.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        if (item.getItemId()==R.id.menuUserManager){
+            Intent intent = new Intent(this, UserManagement.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        if (item.getItemId()==R.id.menuLogout){
+            Intent intent = new Intent(this, Home.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        if (item.getItemId()==R.id.menuCart){
+            Intent intent = new Intent(this, RecyclerViewCart.class);
+
+            // Chuyển sang activity add product
+            this.startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }

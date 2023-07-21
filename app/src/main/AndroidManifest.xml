@@ -14,7 +14,7 @@
         android:logo="@drawable/icon"
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DelitesPRM392Project1"
+        android:theme="@style/Theme.DelitesPRM392Project"
         tools:targetApi="31">
         <activity
             android:name=".Cart.RecyclerViewOrder"
@@ -63,15 +63,18 @@
             android:exported="false" />
         <activity
             android:name=".Signup"
-            android:exported="false" />
+            android:exported="true"
+            android:theme="@style/Theme.DelitesPRM392Project1"/>
         <activity
             android:name=".Login"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.DelitesPRM392Project1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".MainActivity"
