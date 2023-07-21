@@ -2,7 +2,9 @@ package com.example.delitesprm392project.Cart;
 
 import com.example.delitesprm392project.model.Product;
 
-public class CartItem {
+import java.io.Serializable;
+
+public class CartItem implements Serializable {
     private Product product;
     private int quantity;
 
