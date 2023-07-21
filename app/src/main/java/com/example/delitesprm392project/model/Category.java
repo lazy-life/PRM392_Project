@@ -1,30 +1,31 @@
 package com.example.delitesprm392project.model;
 
 public class Category {
-    private int categoryId;
-    private String categoryName;
+    private int id;
+    private String name;
 
-    public Category(int categoryId, String categoryName) {
-        this.categoryId = categoryId;
-        this.categoryName = categoryName;
+    public Category(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public Category() {
     }
 
-    public int getCategoryId() {
-        return categoryId;
+
+    public int getId() {
+        return id;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setId(int categoryId) {
+        this.id = categoryId;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public String getName() {
+        return name;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setName(String categoryName) {
+        this.name = categoryName;
     }
 }

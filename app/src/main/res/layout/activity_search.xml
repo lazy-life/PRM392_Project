@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:titleTextColor="@android:color/white"
+            android:layout_column="0"
+            android:layout_row="0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/search_search"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="0.85"
+                    android:background="@drawable/search"
+                    android:hint="Find Something..."
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="#000"
+                    android:textColorHint="#808080"
+                    android:textSize="15sp" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_search_search"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0.15"
+                    android:background="@drawable/searchbtn"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Search"
+                    android:textColor="#fff" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_product_Recycle_View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>
