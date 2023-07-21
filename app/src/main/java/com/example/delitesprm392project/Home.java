@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ import com.example.delitesprm392project.RecyclerView.ProductManager.ProductManag
 import com.example.delitesprm392project.model.Category;
 import com.example.delitesprm392project.model.Product;
 import com.example.delitesprm392project.user.UserManagement;
+import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -215,9 +217,12 @@ public class Home extends AppCompatActivity {
             return true;
         }
         if (item.getItemId()==R.id.menuLogout){
-            Intent intent = new Intent(this, Home.class);
-
-            // Chuyển sang activity add product
+            Intent intent = new Intent(this, Login.class);
+            AuthUI.getInstance().signOut(getApplicationContext()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                public void onComplete(@NonNull Task<Void> task) {
+                    Toast.makeText(getApplicationContext(), "Logout successful", Toast.LENGTH_SHORT).show();
+                }
+            });
             this.startActivity(intent);
             return true;
         }
