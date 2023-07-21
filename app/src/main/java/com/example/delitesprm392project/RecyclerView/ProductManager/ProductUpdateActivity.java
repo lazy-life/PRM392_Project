@@ -95,6 +95,7 @@ public class ProductUpdateActivity extends AppCompatActivity {
                 updateProduct.setDescription(pDescription.getText().toString());
                 updateProduct.setPrice(Double.parseDouble(String.valueOf(pPrice.getText())) );
                 updateProduct.setStocking(pStocking.isChecked());
+                updateProduct.setQuantity(30);
                 UpdateData(updateProduct);
             }
         });
