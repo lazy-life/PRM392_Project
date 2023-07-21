@@ -7,14 +7,19 @@
     android:orientation="vertical"
     tools:context=".user.UserManagement">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:textAlignment="textStart"
-        android:paddingStart="10dp"
-        android:id="@+id/manageBack"
+
+    <LinearLayout
+        android:background="@color/green"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:background="@drawable/shape_border_btn"
-        android:text="Back" />
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/manageBack"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/back"
+            android:textAlignment="textStart" />
+    </LinearLayout>
     <ImageView
         android:id="@+id/userImg"
         android:layout_width="150dp"
