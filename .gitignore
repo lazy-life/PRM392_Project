@@ -16,9 +16,3 @@ local.properties
 local.properties
 *.properties
 local.properties
-.gradle/buildOutputCleanup/outputFiles.bin
-*.lock
-*.bin
-*.lock
-*.bin
-*.lock
