@@ -32,7 +32,7 @@
             android:name=".RecyclerView.ProductManager.ProductUpdateActivity"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,7 +62,7 @@
             android:name=".Signup"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".Home"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
