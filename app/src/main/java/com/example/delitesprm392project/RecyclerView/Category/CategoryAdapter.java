@@ -19,10 +19,12 @@ import java.util.List;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
     private  List<Category> categorylist;
     private Context mContext;
+    private  Class mClass;
 
-    public CategoryAdapter(List<Category> categorylist,Context mContext) {
+    public CategoryAdapter(List<Category> categorylist,Context mContext,Class mClass) {
         this.categorylist = categorylist;
         this.mContext = mContext;
+        this.mClass = mClass;
 
     }
 
@@ -43,7 +45,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent  = new Intent(mContext, CategoryProductActivity.class);
+                Intent intent  = new Intent(mContext, mClass);
                 intent.putExtra("cateid",category.getId());
                 mContext.startActivity(intent);
             }

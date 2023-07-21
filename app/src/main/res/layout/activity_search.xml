@@ -40,7 +40,7 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_search_search"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
@@ -51,6 +51,19 @@
                     android:textColor="#fff" />
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_CategoryRecycleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/search_product_Recycle_View"
             android:layout_width="match_parent"

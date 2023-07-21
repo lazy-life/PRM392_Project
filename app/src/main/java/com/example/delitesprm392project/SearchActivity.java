@@ -3,6 +3,7 @@ package com.example.delitesprm392project;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -12,7 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.delitesprm392project.RecyclerView.Category.CategoryAdapter;
 import com.example.delitesprm392project.RecyclerView.ProductHome.ProductAdapter;
+import com.example.delitesprm392project.model.Category;
 import com.example.delitesprm392project.model.Product;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,30 +28,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
-    RecyclerView searchProductRecyclerView;
+    RecyclerView searchProductRecyclerView,categoryRecyclerView;
     ProductAdapter productAdapter;
     List<Product> productList;
-    DatabaseReference productRef;
+    DatabaseReference productRef,cateRef;
     EditText search;
     Button btnSearch;
+    CategoryAdapter categoryAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         Intent intent =getIntent();
         String s = intent.getStringExtra("search");
+        int cateid = intent.getIntExtra("cateid",0);
         search = findViewById(R.id.search_search);
         btnSearch = findViewById(R.id.btn_search_search);
         search.setText(s);
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String str = search.getText().toString();
-
+                String s = search.getText().toString();
+                categoryRecyclerView = findViewById(R.id.search_CategoryRecycleView);
+                searchProductRecyclerView = findViewById(R.id.search_product_Recycle_View);
+                Log.d("sada",String.valueOf(LoadDataCategory()));
+                LoadDataProductSearch(s);
             }
         });
+        categoryRecyclerView = findViewById(R.id.search_CategoryRecycleView);
         searchProductRecyclerView = findViewById(R.id.search_product_Recycle_View);
-        Log.d("aaa",String.valueOf(productList));
+        Log.d("sada",String.valueOf(LoadDataCategory()));
         LoadDataProductSearch(s);
 
 
@@ -83,6 +93,46 @@ public class SearchActivity extends AppCompatActivity {
             searchProductRecyclerView.setAdapter(productAdapter);
             searchProductRecyclerView.setLayoutManager(gridLayoutManager);
         }
+    }
+    private boolean LoadDataCategory(){
+        List<Category> list = new ArrayList<>();
+        cateRef =  FirebaseDatabase.getInstance().getReference("Categorys");
+        cateRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Category category = snapshot.getValue(Category.class);
+
+                    list.add(category);
+
+                }
+                if(onCategoryLoad(list)){
+                    Log.d("sddd",String.valueOf(list));
+
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        if(list.isEmpty()){
+            return false;
+        }else{
+            return true;
+        }
+
+    }
+    private boolean onCategoryLoad(List<Category> cate){
+        if(!cate.isEmpty()){
+            categoryAdapter = new CategoryAdapter(cate,SearchActivity.this,SearchActivity.class);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(SearchActivity.this);
+            linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            categoryRecyclerView.setAdapter(categoryAdapter);
+            categoryRecyclerView.setLayoutManager(linearLayoutManager);
+            return true;
+        }
+        return false;
     }
 
 }

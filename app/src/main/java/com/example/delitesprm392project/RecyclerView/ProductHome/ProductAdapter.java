@@ -14,6 +14,7 @@ import com.example.delitesprm392project.DetailProduct;
 import com.example.delitesprm392project.R;
 import com.example.delitesprm392project.RecyclerView.Category.CategoryViewHolder;
 import com.example.delitesprm392project.model.Product;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +44,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
         Product product = productList.get(position);
         holder.productName.setText(product.getName());
         holder.productPrice.setText(String.valueOf(product.getPrice()));
+        Picasso.get().load(product.getImage()).into(holder.productImage);
         holder.productImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
