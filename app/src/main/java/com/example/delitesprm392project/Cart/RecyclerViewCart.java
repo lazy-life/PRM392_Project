@@ -8,8 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.delitesprm392project.Home;
 import com.example.delitesprm392project.R;
 import com.example.delitesprm392project.RecyclerView.ProductHome.ProductAdapter;
 import com.example.delitesprm392project.model.Product;
@@ -23,25 +25,28 @@ public class RecyclerViewCart extends AppCompatActivity {
     RecyclerView recyclerView;
     TextView totalPrice;
     Button btnCheckout;
+    ImageView goHome;
     double sum = 0;
-//    ProductAdapter proAdapter = new ProductAdapter();
+    //    ProductAdapter proAdapter = new ProductAdapter();
     ArrayList<CartItem> cartItems = new ArrayList<CartItem>();
     // linh: fix cung list de hien thi cart
     public static List<CartItem> cartItemList2 = new ArrayList<>();
-    Product product1 = new Product(1, "Product 1", 10.0, 1, true, "app/src/main/res/drawable/apple2.jpg", "Product 1 description");
-    Product product2 = new Product(2, "Product 2", 20.0, 2, false, "app/src/main/res/drawable/apple2.jpg", "Product 2 description");
-    Product product3 = new Product(3, "Product 3", 30.0, 1, true, "app/src/main/res/drawable/apple2.jpg", "Product 3 description");
-    Product product4 = new Product(4, "Product 4", 40.0, 2, false, "app/src/main/res/drawable/apple2.jpg", "Product 4 description");
-    Product product5 = new Product(5, "Product 5", 50.0, 1, true, "app/src/main/res/drawable/apple2.jpg", "Product 5 description");
-
-    CartItem cartItem1 = new CartItem(product1, 1);
-    CartItem cartItem2 = new CartItem(product2, 1);
-    CartItem cartItem3 = new CartItem(product3, 1);
-    CartItem cartItem4 = new CartItem(product4, 1);
-    CartItem cartItem5 = new CartItem(product5, 1);
+//    Product product1 = new Product(1, "Product 1", 10.0, 1, true, "app/src/main/res/drawable/apple2.jpg", "Product 1 description");
+//    Product product2 = new Product(2, "Product 2", 20.0, 2, false, "app/src/main/res/drawable/apple2.jpg", "Product 2 description");
+//    Product product3 = new Product(3, "Product 3", 30.0, 1, true, "app/src/main/res/drawable/apple2.jpg", "Product 3 description");
+//    Product product4 = new Product(4, "Product 4", 40.0, 2, false, "app/src/main/res/drawable/apple2.jpg", "Product 4 description");
+//    Product product5 = new Product(5, "Product 5", 50.0, 1, true, "app/src/main/res/drawable/apple2.jpg", "Product 5 description");
+//
+//    CartItem cartItem1 = new CartItem(product1, 1);
+//    CartItem cartItem2 = new CartItem(product2, 1);
+//    CartItem cartItem3 = new CartItem(product3, 1);
+//    CartItem cartItem4 = new CartItem(product4, 1);
+//    CartItem cartItem5 = new CartItem(product5, 1);
 
     // linh: fix cung list de hien thi cart
     CartAdapter cartAdapter;
+    Cart cart = Cart.getInstance();
+    public List<CartItem> cartList = cart.getCartList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +56,12 @@ public class RecyclerViewCart extends AppCompatActivity {
         recyclerView = findViewById(R.id.viewRecycleCartList);
         totalPrice = findViewById(R.id.tvTotal);
         btnCheckout = findViewById(R.id.btnCheckout);
-
-        cartItemList2.add(cartItem1);
-        cartItemList2.add(cartItem2);
-        cartItemList2.add(cartItem3);
-        cartItemList2.add(cartItem4);
-        cartItemList2.add(cartItem5);
+        goHome = findViewById(R.id.btnHome);
+//        cartItemList2.add(cartItem1);
+//        cartItemList2.add(cartItem2);
+//        cartItemList2.add(cartItem3);
+//        cartItemList2.add(cartItem4);
+//        cartItemList2.add(cartItem5);
 //        if(proAdapter.cartItemList != null){
 //            for(CartItem cartItem:proAdapter.cartItemList){
 //                cartItems.add(cartItem);
@@ -66,8 +71,19 @@ public class RecyclerViewCart extends AppCompatActivity {
 //            recyclerView.setAdapter(cartAdapter);
 //            recyclerView.setLayoutManager(linearLayoutManager);
 //        }
-        if (cartItemList2 != null) {
-            for (CartItem cartItem : cartItemList2) {
+//        if (cartItemList2 != null) {
+//            for (CartItem cartItem : cartItemList2) {
+//                cartItems.add(cartItem);
+//                sum += cartItem.getTotalPrice();
+//            }
+//            cartAdapter = new CartAdapter(cartItems, RecyclerViewCart.this, totalPrice);
+//            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+//            recyclerView.setAdapter(cartAdapter);
+//            recyclerView.setLayoutManager(linearLayoutManager);
+//            totalPrice.setText(Double.toString(sum));
+//        }
+        if (cartList != null) {
+            for (CartItem cartItem : cartList) {
                 cartItems.add(cartItem);
                 sum += cartItem.getTotalPrice();
             }
@@ -86,6 +102,14 @@ public class RecyclerViewCart extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("cartList", (Serializable) cartItems);
                 intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
+        goHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Home.class);
                 startActivity(intent);
             }
         });

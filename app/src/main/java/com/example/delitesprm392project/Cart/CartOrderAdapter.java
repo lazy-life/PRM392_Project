@@ -45,7 +45,7 @@ public class CartOrderAdapter extends RecyclerView.Adapter<CartOrderViewHolder> 
 
             holder.cartOrderName.setText(cart.getProduct().getName());
             holder.cartOrderPrice.setText(String.valueOf(cart.getProduct().getPrice()));
-            holder.cartOrderQuantity.setText(String.valueOf(cart.getQuantity()));
+            holder.cartOrderQuantity.setText("x" + String.valueOf(cart.getQuantity()));
         }
     }
 

@@ -1,6 +1,7 @@
 package com.example.delitesprm392project.Cart;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
         //        CartItem cart = productAdapter.cartItemList.get(position);
         CartItem cart = cartList.get(position);
         if (cart != null) {
+//            Drawable drawable = mContext.getResources().getDrawable(R.drawable.nahida);
+//            holder.itemImg.setImageDrawable(drawable);
             Picasso.get().load(cart.getProduct().getImage()).into(holder.itemImg);
             holder.itemName.setText(cart.getProduct().getName());
             holder.itemPrice.setText(String.valueOf(cart.getProduct().getPrice()));
