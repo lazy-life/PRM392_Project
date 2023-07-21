@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.delitesprm392project.R;
-import com.example.delitesprm392project.RecyclerView.Product.ProductAdapter;
+import com.example.delitesprm392project.RecyclerView.ProductHome.ProductAdapter;
 import com.example.delitesprm392project.model.Product;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class RecyclerViewCart extends AppCompatActivity {
     RecyclerView recyclerView;
     TextView totalPrice;
     double sum=0;
-    ProductAdapter proAdapter = new ProductAdapter();
+
     ArrayList<CartItem> cartItems = new ArrayList<CartItem>();
     // linh: fix cung list de hien thi cart
     public static List<CartItem> cartItemList2 = new ArrayList<>();

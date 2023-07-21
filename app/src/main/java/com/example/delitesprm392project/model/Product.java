@@ -1,57 +1,57 @@
 package com.example.delitesprm392project.model;
 
 public class Product {
-    private int productid;
-    private String productname;
-    private double productprice;
-    private int categoryid;
+    private int id;
+    private String name;
+    private double price;
+    private int categoryId;
     private boolean stocking;
-    private String imagePath;
-    private String productDes;
+    private String image;
+    private String description;
 
     public Product() {
     }
 
-    public Product(int productid, String productname, double productprice, int categoryid, boolean stocking, String imagePath, String productDes) {
-        this.productid = productid;
-        this.productname = productname;
-        this.productprice = productprice;
-        this.categoryid = categoryid;
+    public Product(int id, String name, double price, int categoryId, boolean stocking, String image, String description) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.categoryId = categoryId;
         this.stocking = stocking;
-        this.imagePath = imagePath;
-        this.productDes = productDes;
+        this.image = image;
+        this.description = description;
     }
 
-    public int getProductid() {
-        return productid;
+    public int getId() {
+        return id;
     }
 
-    public void setProductid(int productid) {
-        this.productid = productid;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getProductname() {
-        return productname;
+    public String getName() {
+        return name;
     }
 
-    public void setProductname(String productname) {
-        this.productname = productname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public double getProductprice() {
-        return productprice;
+    public double getPrice() {
+        return price;
     }
 
-    public void setProductprice(double productprice) {
-        this.productprice = productprice;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public int getCategoryid() {
-        return categoryid;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategoryid(int categoryid) {
-        this.categoryid = categoryid;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
     public boolean isStocking() {
@@ -62,19 +62,19 @@ public class Product {
         this.stocking = stocking;
     }
 
-    public String getImagePath() {
-        return imagePath;
+    public String getImage() {
+        return image;
     }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public String getProductDes() {
-        return productDes;
+    public String getDescription() {
+        return description;
     }
 
-    public void setProductDes(String productDes) {
-        this.productDes = productDes;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

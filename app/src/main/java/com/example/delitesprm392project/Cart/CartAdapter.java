@@ -5,19 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.delitesprm392project.R;
-import com.example.delitesprm392project.RecyclerView.Product.ProductAdapter;
-import com.example.delitesprm392project.model.Product;
+import com.example.delitesprm392project.RecyclerView.ProductHome.ProductAdapter;
 import com.squareup.picasso.Picasso;
-import com.yonder.basketlayout.BasketLayoutViewListener;
-import com.yonder.basketlayout.State;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
@@ -37,7 +32,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
         this.tvTotal = tvTotal;
     }
 
-    ProductAdapter productAdapter = new ProductAdapter();
+//    ProductAdapter productAdapter = new ProductAdapter();
 
     @NonNull
     @Override
@@ -54,10 +49,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
         //        CartItem cart = productAdapter.cartItemList.get(position);
         CartItem cart = cartList.get(position);
         if (cart != null) {
-            Picasso.get().load(cart.getProduct().getImagePath()).into(holder.itemImg);
-            holder.itemName.setText(cart.getProduct().getProductname());
-            holder.itemPrice.setText(String.valueOf(cart.getProduct().getProductprice()));
-            holder.itemQuantity.setText(String.valueOf(cart.getQuantity()));
+
         }
 
         // button decrease
