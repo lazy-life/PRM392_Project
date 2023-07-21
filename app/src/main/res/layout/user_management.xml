@@ -25,6 +25,7 @@
         android:id="@+id/userImg"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:clickable="true"
         android:scaleType="centerCrop" />
 
     <TextView
