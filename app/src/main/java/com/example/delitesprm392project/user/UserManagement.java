@@ -49,7 +49,6 @@ public class UserManagement extends AppCompatActivity {
         user = firebaseAuth.getCurrentUser();
 
         img = findViewById(R.id.userImg);
-        img.setBackgroundResource(R.drawable.avatar);
         TextView name = findViewById(R.id.userName);
         TextView email = findViewById(R.id.userEmail);
 
