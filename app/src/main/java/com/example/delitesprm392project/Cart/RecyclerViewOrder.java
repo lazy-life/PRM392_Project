@@ -36,6 +36,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 
 public class RecyclerViewOrder extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -131,24 +132,9 @@ public class RecyclerViewOrder extends AppCompatActivity {
 
     public void UpdateData(Product product){
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Products").child(String.valueOf(product.getId()-1));
+        databaseReference = firebaseDatabase.getReference("Products").child(String.valueOf(product.getId()));
+        databaseReference.setValue(product);
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                //cập nhật dữ liệu trên firebase theo product
-                databaseReference.setValue(product);
-                //ve lai trang san pham
-                Log.d("TAG", "Data loaded successfully.");
-                // Call a method to update your UI with the new data here
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.d("TAG", "Failed to load data. Error message: " + error.getMessage());
-                // Handle the error here
-            }
-        });
     }
 
     public void AddData(Order product) {
