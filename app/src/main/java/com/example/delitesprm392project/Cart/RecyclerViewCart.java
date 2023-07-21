@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.delitesprm392project.R;
-import com.example.delitesprm392project.RecyclerView.Product.ProductAdapter;
+import com.example.delitesprm392project.RecyclerView.ProductHome.ProductAdapter;
 import com.example.delitesprm392project.model.Product;
 
 import java.io.Serializable;

@@ -34,12 +34,16 @@
         <activity
             android:name=".Login"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity
+            android:name=".CategoryProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerView.ProductManager.ProductManagerRecycleView"
+            android:exported="true" />
         <activity
             android:name=".Cart.RecyclerViewCart"
             android:exported="true" />
@@ -63,6 +67,19 @@
             android:exported="false" />
         <activity
             android:name=".Home"
+            android:name=".Home"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Signup"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
