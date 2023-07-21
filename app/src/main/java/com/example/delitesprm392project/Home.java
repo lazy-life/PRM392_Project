@@ -54,7 +54,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String s = search.getText().toString();
-                Intent intent =new Intent(Home.this,SearchActivity.class);
+                Intent intent =new Intent(Home.this, SearchActivity.class);
                 intent.putExtra("search",s);
                 startActivity(intent);
             }
@@ -139,7 +139,7 @@ public class Home extends AppCompatActivity {
     }
     private boolean onCategoryLoad(List<Category> cate){
         if(!cate.isEmpty()){
-            categoryAdapter = new CategoryAdapter(cate,Home.this);
+            categoryAdapter = new CategoryAdapter(cate,Home.this, CategoryProductActivity.class);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Home.this);
             linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
             categoryRecyclerView.setAdapter(categoryAdapter);

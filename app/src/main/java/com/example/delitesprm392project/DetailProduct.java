@@ -66,14 +66,14 @@ public class DetailProduct extends AppCompatActivity {
                 if (cart.getCartList().isEmpty()) {
                     CartItem c = new CartItem(product, 1);
                     cart.addCartItem(c);
-                } else {
-                    for (CartItem c : cart.getCartList()) {
-                        if (c.getProduct().getId() == product.getId()) {
-                            c.setQuantity(c.getQuantity() + 1);
-                        } else {
-                            cart.addCartItem(new CartItem(product, 1));
+                }else{
+
+                    for (CartItem c: cart.getCartList()){
+                        if(c.getProduct().getId()==product.getId()){
+                            c.setQuantity(c.getQuantity()+1);
                         }
                     }
+
                 }
                 Toast.makeText(DetailProduct.this, "Add product to cart successfully", Toast.LENGTH_SHORT).show();
             }
